@@ -12,12 +12,18 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0
     var targetValue: Int = 0
+    var scoreValue: Int = 0
+    var round: Int = 0
     
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewRound()
+        updateLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +43,7 @@ class ViewController: UIViewController {
         
         presentViewController(alert, animated: true, completion: nil)
         startNewRound()
+        updateLabels()
     }
     
     @IBAction func sliderMoved(slider: UISlider) {
@@ -47,6 +54,13 @@ class ViewController: UIViewController {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 1 + Int(arc4random_uniform(100))
         slider.value = Float(currentValue)
+        round++
+    }
+    
+    func updateLabels() {
+        targetLabel.text = String(targetValue)
+        scoreLabel.text = String(scoreValue)
+        roundLabel.text = String(round)
     }
 }
 
