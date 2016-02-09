@@ -22,8 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
-        updateLabels()
+        startNewGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +83,13 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
         roundLabel.text = String(round)
+    }
+    
+    @IBAction func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
+        updateLabels()
     }
 }
 
