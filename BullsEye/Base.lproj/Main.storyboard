@@ -91,7 +91,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="roundLabel" destination="6SM-cd-hpK" id="rlq-hP-Jtu"/>
-                        <outlet property="scoreLabel" destination="rbr-SQ-7QO" id="0XX-U7-Ic5"/>
+                        <outlet property="scoreLabel" destination="rbr-SQ-7QO" id="4r3-by-HAg"/>
                         <outlet property="slider" destination="h6y-hQ-9Vz" id="8ht-sW-Fmn"/>
                         <outlet property="targetLabel" destination="Scb-6n-dBA" id="f9d-39-9VT"/>
                     </connections>

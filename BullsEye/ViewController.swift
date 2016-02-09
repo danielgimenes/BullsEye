@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0
     var targetValue: Int = 0
-    var scoreValue: Int = 0
+    var score: Int = 0
     var round: Int = 0
     
     @IBOutlet weak var slider: UISlider!
@@ -32,8 +32,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let message = "The value of the slider is: \(currentValue)" +
-            "\nThe target value is: \(targetValue)"
+        let difference = abs(currentValue - targetValue)
+        let points = 100 - difference
+        score += points
+
+        let message = "You scored \(points) points!"
         
         let alert = UIAlertController(title: "Hello World", message: message, preferredStyle: .Alert)
         
@@ -59,7 +62,7 @@ class ViewController: UIViewController {
     
     func updateLabels() {
         targetLabel.text = String(targetValue)
-        scoreLabel.text = String(scoreValue)
+        scoreLabel.text = String(score)
         roundLabel.text = String(round)
     }
 }
